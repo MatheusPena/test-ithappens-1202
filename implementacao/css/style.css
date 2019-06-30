@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
+
+.roboto-slab{
+  font-family: 'Roboto Slab', serif;
+}
+.comfortaa{
+  font-family: 'Comfortaa', cursive;
+}
+.varela-round{
+  font-family: 'Varela Round', sans-serif;
+}
