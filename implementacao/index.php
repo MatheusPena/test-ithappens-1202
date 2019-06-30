@@ -19,9 +19,9 @@
     </div>
 
     <div class="d-flex align-items-center justify-content-center">
-      <a href="cadFilial.php"><img src="imagens/casa.png" class="rounded mt-3" alt="..." style="width: 8em; margin-right:20px"></a>
-      <a href="cadProduto.php"><img src="imagens/adicionar.png" class="rounded mt-3" alt="..." style="width: 8em; margin-right:20px"></a>
-      <a href="cadPedido.php"><img src="imagens/cadastrar.png" class="rounded mt-3" alt="..." style="width: 8em; margin-right:20px"></a>
+      <a href="filial.php"><img src="imagens/casa.png" class="rounded mt-3" alt="..." style="width: 8em; margin-right:20px"></a>
+      <a href="produto.php"><img src="imagens/adicionar.png" class="rounded mt-3" alt="..." style="width: 8em; margin-right:20px"></a>
+      <a href="pedido.php"><img src="imagens/cadastrar.png" class="rounded mt-3" alt="..." style="width: 8em; margin-right:20px"></a>
       <a href="buscarPedido.php"><img src="imagens/pesquisar.png" class="rounded mt-3" alt="..." style="width: 8em; margin-right:18px"></a>
     </div>
   </div>
