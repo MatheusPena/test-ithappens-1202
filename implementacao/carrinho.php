@@ -14,20 +14,16 @@
       <div class="row align-items-center justify-content-center">
         <a href="index.php"></a>
       </div>
-      <div class="row align-items-center justify-content-center" style="margin-top:5%">
-        <h2 class="mt-2 ml-3"><strong>Selecione uma Opção</strong> </h2>
-      </div>
+      <div class="row align-items-center justify-content-center" style="margin-top:8%"></div>
 
-      <div class="d-flex align-items-center justify-content-center">
-        <a href="filial.php"><img src="imagens/casa.png" class="rounded img-fluid mt-3" alt="Responsive image" style="width: 8em; margin-right:20px"></a>
-        <a href="produto.php"><img src="imagens/adicionar.png" class="rounded img-fluid mt-3" alt="Responsive image" style="width: 8em; margin-right:20px"></a>
-        <a href="pedido.php"><img src="imagens/cadastrar.png" class="rounded img-fluid mt-3" alt="Responsive image" style="width: 8em; margin-right:20px"></a>
-        <a href="buscarPedido.php"><img src="imagens/pesquisar.png" class="rounded img-fluid mt-3" alt="Responsive image" style="width: 8em; margin-right:18px"></a>
+      <div class="d-flex align-items-center justify-content-center float-right">
+        <a href="JavaScript: window.history.back();" class="ml-5 varela-round text-success">Voltar <i class="fas fa-undo"></i></a>
+        <a href="response/cancelaPedido.php?idp=<?=$_GET['idp']?>" class="ml-5 text-danger varela-round">Cancelar Pedido <i class="fas fa-ban"></i></a>
       </div>
     </div>
-    <hr>
+    <hr class="mt-4">
 
-    <div class="container mt-5">
+    <div class="container mt-5" >
       <div class="shadow p-3 mb-5 bg-shadow-it text-dark rounded comfortaa">
         <h4>Resumo do pedido Nº<?=$_GET['idp']?></h4>
         <hr class="bg-white">
@@ -48,13 +44,13 @@
           <div class="row mx-auto">
             <input type="hidden" name="idp" value="<?=$_GET['idp']?>">
             <input type="hidden" name="tipo_ped" value="<?=$_GET['tipo_ped']?>">
-            <select class="form-control col-sm-4" name="f_pag">
+            <select class="form-control col-sm-4" name="f_pag" required>
               <option>Selecione a forma de pagamento</option>
               <option value="Cartão de crédito">Cartão de crédito</option>
               <option value="Boleto Bancário">Boleto Bancário</option>
               <option value="A vista">A vista</option>
             </select>
-            <button type="submit" class="btn btn-danger ml-3">Finalizar pedido <i class="fas fa-check"></i></button>
+            <button type="submit" class="btn btn-success ml-3">Finalizar pedido <i class="fas fa-check"></i></button>
           </div>
         </form>
       </div>
@@ -67,7 +63,7 @@
         foreach ($l as $v) {
       ?>
           <div class="shadow p-3 mb-2 text-dark rounded varela-round">
-            <a href="response/cancelaProduto.php?id_prod=<?=$v->ID?>"><i class="mt-5 fas fa-trash float-right"></i></a>
+            <a href="response/cancelaProduto.php?id_prod=<?=$v->ID?>"><i style="font-size:25px" class="mt-5 text-danger fas fa-trash float-right"></i></a>
             <h6><strong>Produto: </strong><?=$v->produto?></h6>
             <h6><strong>Valor por unidade: </strong>R$ <?=$v->valor_un?></h6>
             <h6><strong>Quantidade pedida:</strong> <?=$v->qtde_pedido?></h6>

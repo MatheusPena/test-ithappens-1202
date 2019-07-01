@@ -14,15 +14,11 @@
       <div class="row align-items-center justify-content-center">
         <a href="index.php"></a>
       </div>
-      <div class="row align-items-center justify-content-center" style="margin-top:5%">
-        <h2 class="mt-2 ml-3"><strong>Selecione uma Opção</strong> </h2>
-      </div>
+      <div class="row align-items-center justify-content-center" style="margin-top:8%"></div>
 
-      <div class="d-flex align-items-center justify-content-center">
-        <a href="filial.php"><img src="imagens/casa.png" class="rounded img-fluid mt-3" alt="Responsive image" style="width: 8em; margin-right:20px"></a>
-        <a href="produto.php"><img src="imagens/adicionar.png" class="rounded img-fluid mt-3" alt="Responsive image" style="width: 8em; margin-right:20px"></a>
-        <a href="pedido.php"><img src="imagens/cadastrar.png" class="rounded img-fluid mt-3" alt="Responsive image" style="width: 8em; margin-right:20px"></a>
-        <a href="buscarPedido.php"><img src="imagens/pesquisar.png" class="rounded img-fluid mt-3" alt="Responsive image" style="width: 8em; margin-right:18px"></a>
+      <div class="d-flex align-items-center justify-content-center float-right">
+        <a href="carrinho.php?idp=<?=$_GET['idp']?>&tipo_ped=<?=$_GET['tipo_ped']?>" class="ml-5 text-success varela-round">Ver Carrinho <i class="fas fa-shopping-cart"></i></a>
+        <a href="ResponsePHP/cancelarPedido.php?idp=<?=$_GET['idp']?>"    class="ml-5 text-danger varela-round">Cancelar Pedido <i class="fas fa-ban vermelho-mateus"></i></a>
       </div>
     </div>
     <hr class="mt-4">
@@ -38,10 +34,10 @@
         <thead class="bg-shadow-it text-dark ">
           <tr>
             <th>Produto</th>
-            <th>Quantidade</th>
+            <th>Estoque</th>
             <th>Valor (UN)</th>
             <th>Código de barra</th>
-            <th>Quantidad</th>
+            <th>Quantidade</th>
           </tr>
         </thead>
         <tbody>
@@ -93,11 +89,11 @@
             "sInfoFiltered": "(Filtrados de _MAX_ registros)",
             "sInfoPostFix": "",
             "sInfoThousands": ".",
-            "sLengthMenu": "_MENU_ <r class='varela-round azul-mateus'>resultados por página</r>",
+            "sLengthMenu": "_MENU_ <r class='varela-round'>resultados por página</r>",
             "sLoadingRecords": "Carregando...",
             "sProcessing": "Processando...",
             "sZeroRecords": "Nenhum registro encontrado",
-            "sSearch": "<r class='varela-round azul-mateus'>Buscar Produto</r>",
+            "sSearch": "<r class='varela-round'>Buscar Produto</r>",
             "oPaginate": {
               "sNext": "Próximo",
               "sPrevious": "Anterior",

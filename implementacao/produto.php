@@ -59,7 +59,7 @@
         </div>
         <div class="form-row">
           <div class="col-md-6 mb-3">
-            <label for="validationTooltip03" class="varela-round azul-mateus">Quantidade</label>
+            <label for="validationTooltip03" class="varela-round azul-mateus">Quantidade no Estoque</label>
             <input type="number" name="qtde" class="form-control" id="validationTooltip03" placeholder="" required>
           </div>
           <div class="col-md-6 mb-3">
