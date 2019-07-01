@@ -3,11 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.18/datatables.min.css"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- Meu CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <title>Produtos</title>
+    <title>Pedidos</title>
   </head>
   <body>
     <div class="container">
@@ -25,60 +27,42 @@
         <a href="buscarPedido.php"><img src="imagens/pesquisar.png" class="rounded img-fluid mt-3" alt="Responsive image" style="width: 8em; margin-right:18px"></a>
       </div>
     </div>
-    <hr class="mt-4">
-    <div class="container mt-5">
-      <div class="shadow p-3 mb-5 bg-success bg-shadow-it text-light rounded comfortaa">
-        <h4>Informações do pedido</h4>
-        <hr class="bg-white">
-        <p class="">Pedido Nº <strong><?=$_GET['idp']?></strong><br>
-        Tipo do pedido: <strong><?=$_GET['tipo_ped']?></strong></p>
-      </div>
-      <div class="table-responsive my-3">
-      <table id="example" class="table table-bordered table-sm varela-round text-center">
-        <thead class="bg-shadow-it text-dark ">
+    <hr>
+
+    <div class="container mt-3">
+      <p class="h3 comfortaa">Pedidos</p>
+      <table id="example" class="table table-bordered varela-round text-center " >
+        <thead class="text-dark ">
           <tr>
-            <th>Produto</th>
-            <th>Quantidade</th>
-            <th>Valor (UN)</th>
-            <th>Código de barra</th>
-            <th>Quantidad</th>
+            <th>Cod</th>
+            <th>Usuário</th>
+            <th>Cliente</th>
+            <th>Tipo</th>
+            <th>Status</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
           <?php
           require_once('DAO/usuario.php');
-          $listar_prod = new UsuarioDAO();
-          $l = $listar_prod->listarProdutos();
+          $pedidos = new UsuarioDAO();
+          $l = $pedidos->listarPedidos();
           foreach ($l as $v) {
           ?>
           <tr>
-            <td><?=$v->produto?></td>
-            <td><?=$v->qtde?></td>
-            <td><?= "R$ ".$v->valor_prod?></td>
-            <td><?=$v->cod_barra?></td>
-            <td>
-              <form class="" method="post" action="response/adicionaProduto.php">
-                <div class="form-group">
-                  <div class="row">
-                    <input type="hidden" name="id_pedido" value="<?=$_GET['idp']?>">
-                    <input type="hidden" name="id_produto" value="<?=$v->ID_estoque?>">
-                    <input type="hidden" name="valor_un" value="<?=$v->valor_prod?>">
-                    <input type="hidden" name="tipo_ped" value="<?=$_GET['tipo_ped']?>">
-                    <input type="number" class="form-control col-sm-3 ml-3" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Qtde" name="qtde">
-                    <button type="submit" class="btn btn-success col-sm-4 ml-3">Adicionar <i class="fas fa-cart-plus"></i></button>
-                  </div>
+            <td><?=$v->ID?></td>
+            <td><?=$v->usuario?></td>
+            <td><?=$v->cliente?></td>
+            <td><?=$v->tipo_pedido?></td>
+            <td><?=$v->status?></td>
+            <td><a href="infopedido.php?idp=<?=$v->ID?>">Ver Pedido<i class="fas fa-clipboard-list ml-2 "></i></a></td>
 
-                </div>
-              </form>
-            </td>
           </tr>
         <?php } ?>
         </tbody>
       </table>
     </div>
-    </div>
-
-    <!-- JavaScript utilizados (jquery, propperjs e bootstrap) -->
+    <!-- JavaScript utilizados (jquery, propperjs e bootstrap -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
@@ -97,7 +81,7 @@
             "sLoadingRecords": "Carregando...",
             "sProcessing": "Processando...",
             "sZeroRecords": "Nenhum registro encontrado",
-            "sSearch": "<r class='varela-round azul-mateus'>Buscar Produto</r>",
+            "sSearch": "<r class='varela-round azul-mateus'>Buscar Pedido</r>",
             "oPaginate": {
               "sNext": "Próximo",
               "sPrevious": "Anterior",
