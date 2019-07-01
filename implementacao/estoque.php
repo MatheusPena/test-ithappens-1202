@@ -28,7 +28,7 @@
   <hr>
 
     <div class="container col-sm-8">
-      <p class="h4 comfortaa azul-mateus">Estoque filial <?=@$_GET['nome_f']?> <a href="JavaScript: window.history.back();" class=" azul-mateus"><i class="fas fa-undo ml-2" style="font-size: 1.0em"></i></a></p>
+      <p class="h4 comfortaa azul-mateus">Estoque filial <?=@$_GET['nome_f']?> <a href="JavaScript: window.history.back();" ><i class="fas fa-undo ml-2" style="font-size: 1.0em; color:green;"></i></a></p>
       <table id="example" class="table table-bordered varela-round text-center mt-5 " >
         <thead class="text-dark ">
           <tr>

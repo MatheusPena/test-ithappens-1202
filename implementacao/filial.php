@@ -30,7 +30,7 @@
     <p class="h5 comfortaa text-center">Adicionar filiais</p>
     <form method="post" action="response/cadastraFilial.php">
       <div class="form-group">
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="filial" placeholder="Nome da nova filial">
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="filial" placeholder="Nome da nova filial" required>
       </div>
       <button type="submit" class="btn btn-success text-light form-control">ADICIONAR</button>
     </form>
